@@ -1,0 +1,49 @@
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class MapsTest {
+	public static void main(String[] args) {
+
+		Map<Integer, String> hashMap = new HashMap<Integer, String>();
+		Map<Integer, String> linkedHashMap = new LinkedHashMap<Integer, String>();
+		Map<Integer, String> treeMap = new TreeMap<Integer, String>();
+
+		System.out.println();
+
+		System.out.println("HashMap");
+		mapTest(hashMap);
+		System.out.println();
+
+		System.out.println("LinkedHashMap");
+		mapTest(linkedHashMap);
+		System.out.println();
+
+		System.out.println("TreeMap");
+		mapTest(treeMap);
+		System.out.println();
+
+		hashMap.clear();
+		System.out.println("HashMap");
+		mapTest(hashMap);
+		System.out.println();
+	}
+
+	private static void mapTest(Map<Integer, String> map) {
+
+		map.put(6, "Lebron James");
+		map.put(23, "Anthony Davis");
+		map.put(0, "Russel Westbrook");
+		map.put(13, "James Harden");
+		map.put(35, "Kevin Durant");
+		map.put(2, "Kawhi Leonard");
+
+		for (Integer key : map.keySet()) {
+			String value = map.get(key);
+			System.out.println(key + ": " + value);
+		}
+
+	}
+
+}
